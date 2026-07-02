@@ -455,7 +455,7 @@
   </div></footer>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;autoplayReviews&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Reviews&quot;},&quot;reviewSpeed&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:4.5,&quot;min&quot;:2,&quot;max&quot;:8,&quot;step&quot;:0.5,&quot;unit&quot;:&quot;s&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Reviews&quot;},&quot;showPricing&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;autoplayReviews&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Reviews&quot;},&quot;reviewSpeed&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:4.5,&quot;min&quot;:2,&quot;max&quot;:8,&quot;step&quot;:0.5,&quot;unit&quot;:&quot;s&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Reviews&quot;},&quot;showPricing&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;},&quot;galleryImages&quot;:{&quot;tsType&quot;:&quot;string[]&quot;,&quot;default&quot;:[]},&quot;galleryVideos&quot;:{&quot;tsType&quot;:&quot;string[]&quot;,&quot;default&quot;:[]}}">
 class Component extends DCLogic {
   renderVals() {
     const services = [
@@ -499,7 +499,15 @@ class Component extends DCLogic {
       { q: "Do you accommodate custom themes?", a: "Absolutely! We love bringing your unique vision to life with fully custom themes and decorations." },
       { q: "Which areas do you serve?", a: "We serve your city and nearby regions. Share your venue and date and we'll confirm availability right away." }
     ];
-    return { services, bigTiles, smallCards, moreServices, founders, reviews, faqs };
+    const galleryImages = [
+      "Images_new/3.jpeg", "Images_new/4.jpeg", "Images_new/5.jpeg", "Images_new/6.jpeg",
+      "Images_new/7.jpeg", "Images_new/8.jpeg", "Images_new/9.jpeg", "Images_new/10.jpeg",
+      "Images_new/11.jpeg", "Images_new/12.jpeg", "Images_new/13.jpeg", "Images_new/14.jpeg",
+      "Images_new/15.jpeg", "Images_new/16.jpeg", "Images_new/17.jpeg", "Images_new/18.jpeg",
+      "Images_new/19.jpeg", "Images_new/20.jpeg", "Images_new/21.jpeg", "Images_new/22.jpeg",
+      "Images_new/WhatsApp Image 2026-07-01 at 18.12.31.jpeg", "Images_new/WhatsApp Image 2026-07-01 at 18.12.32.jpeg"
+    ];
+    return { services, bigTiles, smallCards, moreServices, founders, reviews, faqs, galleryImages };
   }
 
   componentDidMount() {
