@@ -58,7 +58,7 @@
   .gallery-modal__prev{left:16px}.gallery-modal__next{right:16px}
 </style>
 </helmet>
-<div style="background:#FDFBD4;color:#5C5024;font-family:'Jost',sans-serif;overflow-x:clip;position:relative;">
+<div style="background:#FDFBD4;color:#5C5024;font-family:'Jost',sans-serif;overflow:clip;position:relative;">
 
   <div id="cl-progress" style="position:fixed;top:0;left:0;height:3px;width:0;background:#CE8946;z-index:100;transition:width .1s linear;"></div>
 
@@ -114,19 +114,19 @@
     </div>
     <div data-steps-row style="display:grid;grid-template-columns:1fr;align-items:stretch;gap:18px;margin-top:54px;max-width:1120px;margin-left:auto;margin-right:auto;">
       <div data-reveal style="opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.2,.75,.2,1),transform .8s cubic-bezier(.2,.75,.2,1);text-align:left;background:#F3ECC0;border-radius:26px;padding:30px;box-shadow:0 14px 30px rgba(107,90,27,.07);">
-        <div style="aspect-ratio:16/10;border-radius:18px;overflow:hidden;margin-bottom:22px;"><img src="Images/12.jpeg" alt="Consultation" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div style="aspect-ratio:16/10;border-radius:18px;overflow:hidden;margin-bottom:22px;"><img src="Images/web/12.jpeg" alt="Consultation" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
         <div style="display:flex;align-items:center;gap:10px;"><span style="font-family:'Cormorant Garamond',serif;font-size:20px;color:#CE8946;font-weight:600;">01</span><h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;color:#6B5A1B;font-size:24px;margin:0;">Consultation</h3></div>
         <p style="font-size:14.5px;line-height:1.6;color:#6E5F2A;margin:12px 0 0;">Share your ideas, dates and requirements with our team.</p>
       </div>
       <div data-step-arrow style="display:flex;align-items:center;color:#CE8946;font-size:24px;">→</div>
       <div data-reveal style="opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.2,.75,.2,1) .1s,transform .8s cubic-bezier(.2,.75,.2,1) .1s;text-align:left;background:#F3ECC0;border-radius:26px;padding:30px;box-shadow:0 14px 30px rgba(107,90,27,.07);">
-        <div style="aspect-ratio:16/10;border-radius:18px;overflow:hidden;margin-bottom:22px;"><img src="Images/Birthday 2.jpg" alt="Customization" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div style="aspect-ratio:16/10;border-radius:18px;overflow:hidden;margin-bottom:22px;"><img src="Images/web/Birthday 2.jpg" alt="Customization" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
         <div style="display:flex;align-items:center;gap:10px;"><span style="font-family:'Cormorant Garamond',serif;font-size:20px;color:#CE8946;font-weight:600;">02</span><h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;color:#6B5A1B;font-size:24px;margin:0;">Customization</h3></div>
         <p style="font-size:14.5px;line-height:1.6;color:#6E5F2A;margin:12px 0 0;">We tailor every detail — theme, decor and flow — to fit your vision.</p>
       </div>
       <div data-step-arrow style="display:flex;align-items:center;color:#CE8946;font-size:24px;">→</div>
       <div data-reveal style="opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.2,.75,.2,1) .2s,transform .8s cubic-bezier(.2,.75,.2,1) .2s;text-align:left;background:#F3ECC0;border-radius:26px;padding:30px;box-shadow:0 14px 30px rgba(107,90,27,.07);">
-        <div style="aspect-ratio:16/10;border-radius:18px;overflow:hidden;margin-bottom:22px;"><img src="Images/Bday 5.jpg" alt="Celebration" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div style="aspect-ratio:16/10;border-radius:18px;overflow:hidden;margin-bottom:22px;"><img src="Images/web/Bday 5.jpg" alt="Celebration" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
         <div style="display:flex;align-items:center;gap:10px;"><span style="font-family:'Cormorant Garamond',serif;font-size:20px;color:#CE8946;font-weight:600;">03</span><h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;color:#6B5A1B;font-size:24px;margin:0;">Celebration</h3></div>
         <p style="font-size:14.5px;line-height:1.6;color:#6E5F2A;margin:12px 0 0;">Sit back and enjoy while we bring every moment to life.</p>
       </div>
@@ -462,15 +462,15 @@
 class Component extends DCLogic {
   renderVals() {
     const services = [
-      { title: "Diverse Event Planning", desc: "From birthdays to corporate events, we've got every occasion covered.", img: "Images/6.jpeg" },
-      { title: "Personalized Decorations", desc: "Unique themes and stunning designs, customised for your celebration.", img: "Images/Bday 1.jpg" },
-      { title: "Professional Management", desc: "Expert coordination from start to finish for a completely stress-free day.", img: "Images/House Warming 4.jpg" }
+      { title: "Diverse Event Planning", desc: "From birthdays to corporate events, we've got every occasion covered.", img: "Images/web/6.jpeg" },
+      { title: "Personalized Decorations", desc: "Unique themes and stunning designs, customised for your celebration.", img: "Images/web/Bday 1.jpg" },
+      { title: "Professional Management", desc: "Expert coordination from start to finish for a completely stress-free day.", img: "Images/web/House Warming 4.jpg" }
     ];
     const bigTiles = [
-      { name: "Birthday Parties", desc: "Make every birthday truly special with personalised themes, balloons and dessert tables.", img: "Images/Bday 2.jpg", href: "birthday.html", tag: "View gallery" },
-      { name: "Engagement Ceremonies", desc: "Stunning stages and ambient lighting for the moment two families become one.", img: "Images/8.jpeg", href: "engagement.html", tag: "View gallery" },
-      { name: "Mehendi Ceremony", desc: "Vibrant marigold mandaps, drapes and cosy seating that get everyone dancing.", img: "Images/17.jpeg", href: "", tag: "Photo" },
-      { name: "House Warmings", desc: "Warm, auspicious decor to welcome prosperity into your new beginnings.", img: "Images/House Warming 1.jpg", href: "housewarming.html", tag: "View gallery" }
+      { name: "Birthday Parties", desc: "Make every birthday truly special with personalised themes, balloons and dessert tables.", img: "Images/web/Bday 2.jpg", href: "birthday.html", tag: "View gallery" },
+      { name: "Engagement Ceremonies", desc: "Stunning stages and ambient lighting for the moment two families become one.", img: "Images/web/8.jpeg", href: "engagement.html", tag: "View gallery" },
+      { name: "Mehendi Ceremony", desc: "Vibrant marigold mandaps, drapes and cosy seating that get everyone dancing.", img: "Images/web/17.jpeg", href: "", tag: "Photo" },
+      { name: "House Warmings", desc: "Warm, auspicious decor to welcome prosperity into your new beginnings.", img: "Images/web/House Warming 1.jpg", href: "housewarming.html", tag: "View gallery" }
     ];
     const smallCards = [
       { name: "Baby Showers", desc: "Soft, dreamy setups to celebrate new beginnings." },
@@ -503,11 +503,20 @@ class Component extends DCLogic {
       { q: "Which areas do you serve?", a: "We serve your city and nearby regions. Share your venue and date and we'll confirm availability right away." }
     ];
     const galleryImages = [
-      "Images/3.jpeg", "Images/Bday 3.jpg", "Images/House Warming 2.jpg", "Images/7.jpeg",
-      "Images/Birthday 1.JPG", "Images/House Warming 5.jpg", "Images/10.jpeg", "Images/Bday 6.jpg",
-      "Images/First 1.JPG", "Images/14.jpeg", "Images/House Warming 7.jpg", "Images/Birthday 4.JPG",
-      "Images/18.jpeg", "Images/Bday 8.jpg", "Images/House Warming 9.jpg", "Images/21.jpeg",
-      "Images/Birthday 6.JPG", "Images/First 2.JPG", "Images/House Warming 10.jpg", "Images/22.jpeg"
+      "Images/web/3.jpeg", "Images/web/Bday 1.jpg", "Images/web/House Warming 1.jpg", "Images/web/Birthday.JPG",
+      "Images/web/4.jpeg", "Images/web/Bday 2.jpg", "Images/web/House Warming 2.jpg", "Images/web/Birthday 1.JPG",
+      "Images/web/5.jpeg", "Images/web/Bday 3.jpg", "Images/web/House Warming 3.jpg", "Images/web/Birthday 2.jpg",
+      "Images/web/6.jpeg", "Images/web/Bday 4.jpg", "Images/web/House Warming 4.jpg", "Images/web/Birthday 3.JPG",
+      "Images/web/7.jpeg", "Images/web/Bday 5.jpg", "Images/web/House Warming 5.jpg", "Images/web/Birthday 4.JPG",
+      "Images/web/8.jpeg", "Images/web/Bday 6.jpg", "Images/web/House Warming 6.jpg", "Images/web/Birthday 5.JPG",
+      "Images/web/9.jpeg", "Images/web/Bday 7.jpg", "Images/web/House Warming 7.jpg", "Images/web/Birthday 6.JPG",
+      "Images/web/10.jpeg", "Images/web/Bday 8.jpg", "Images/web/House Warming 8.jpg", "Images/web/Birthday 7.JPG",
+      "Images/web/11.jpeg", "Images/web/Bday 9.jpg", "Images/web/House Warming 9.jpg", "Images/web/First 1.JPG",
+      "Images/web/12.jpeg", "Images/web/13.jpeg", "Images/web/House Warming 10.jpg", "Images/web/First 2.JPG",
+      "Images/web/14.jpeg", "Images/web/15.jpeg", "Images/web/16.jpeg", "Images/web/First 3.JPG",
+      "Images/web/17.jpeg", "Images/web/18.jpeg", "Images/web/19.jpeg", "Images/web/20.jpeg",
+      "Images/web/21.jpeg", "Images/web/22.jpeg",
+      "Images/web/WhatsApp Image 2026-07-01 at 18.12.31.jpeg", "Images/web/WhatsApp Image 2026-07-01 at 18.12.32.jpeg"
     ];
     return { services, bigTiles, smallCards, moreServices, founders, reviews, faqs, galleryImages };
   }
@@ -637,8 +646,8 @@ class Component extends DCLogic {
     const gal = document.getElementById("gallery");
     if (!gal || gal.dataset.built) return;
     gal.dataset.built = "1";
-    // real image URLs go here; empty => styled placeholders the user can swap later
-    const GALLERY_IMAGES = this.props.galleryImages || [];
+    const propImgs = this.props.galleryImages;
+    const GALLERY_IMAGES = (propImgs && propImgs.length) ? propImgs : (this.renderVals().galleryImages || []);
     const COUNT = GALLERY_IMAGES.length || 8;
     const kinds = ["wide","sq","sq","wide","tall","sq"];
     const labels = ["Birthday","Mehendi","Engagement","Housewarming","Haldi","Baby Shower","Stage Decor","Balloon Decor"];
@@ -712,8 +721,9 @@ class Component extends DCLogic {
     const loop = () => { if (track.scrollLeft <= 2) track.scrollLeft += SET; else if (track.scrollLeft >= SET * 2 - 2) track.scrollLeft -= SET; };
     track.addEventListener("scroll", loop, { passive: true });
     let paused = false, userScrolling = false, ust;
-    const speed = 0.55;
-    const tick = () => { if (!document.body.contains(track)) return; if (!paused && !userScrolling) { track.scrollLeft += speed; loop(); } requestAnimationFrame(tick); };
+    let acc = 0;
+    const speed = 0.22;
+    const tick = () => { if (!document.body.contains(track)) return; if (!paused && !userScrolling) { acc += speed; if (acc >= 1) { const px = Math.floor(acc); acc -= px; track.scrollLeft += px; loop(); } } requestAnimationFrame(tick); };
     tick();
     track.parentElement.addEventListener("mouseenter", () => { paused = true; });
     track.parentElement.addEventListener("mouseleave", () => { paused = false; });
