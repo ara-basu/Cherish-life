@@ -56,6 +56,14 @@
   .gallery-modal__nav{position:absolute;top:50%;transform:translateY(-50%);z-index:110;background:rgba(253,251,212,.85);color:#6B5A1B;border:none;width:44px;height:44px;border-radius:50%;font-size:32px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;padding:0}
   .gallery-modal__nav:hover{background:#fff;transform:translateY(-50%) scale(1.1)}
   .gallery-modal__prev{left:16px}.gallery-modal__next{right:16px}
+  /* custom cursor */
+  @media (hover:hover) and (pointer:fine){
+    html,body,a,button,input,select,textarea,label,.gtile,.gallery,.gallery-arrow,[data-event-href]{cursor:none!important}
+    .cl-cursor-dot{position:fixed;top:0;left:0;width:9px;height:9px;border-radius:50%;background:#CE8946;pointer-events:none;z-index:9999;opacity:1;transition:width .2s,height .2s,background .2s,opacity .3s}
+    .cl-cursor-dot.is-hover{background:#D4AF37;width:6px;height:6px}
+    .cl-cursor-ring{position:fixed;top:0;left:0;width:36px;height:36px;border-radius:50%;border:1.5px solid rgba(206,137,70,.6);pointer-events:none;z-index:9998;opacity:1;transition:width .25s,height .25s,border-color .25s,background .25s,opacity .3s}
+    .cl-cursor-ring.is-hover{width:58px;height:58px;border-color:#D4AF37;background:rgba(212,175,55,.14)}
+  }
 </style>
 </helmet>
 <div style="background:#FDFBD4;color:#5C5024;font-family:'Jost',sans-serif;overflow:clip;position:relative;">
@@ -640,6 +648,26 @@ class Component extends DCLogic {
     // ---- contact form ----
     const form = document.getElementById("cl-form");
     if (form) form.addEventListener("submit", (e) => { e.preventDefault(); const n = document.getElementById("cl-form-note"); if (n) n.style.display = "block"; form.reset(); });
+
+    // ---- custom cursor ----
+    if (window.matchMedia("(hover:hover) and (pointer:fine)").matches && !document.getElementById("cl-cursor-dot")) {
+      const dot = document.createElement("div"); dot.id = "cl-cursor-dot"; dot.className = "cl-cursor-dot";
+      const ring = document.createElement("div"); ring.id = "cl-cursor-ring"; ring.className = "cl-cursor-ring";
+      dot.style.opacity = "0"; ring.style.opacity = "0";
+      document.body.appendChild(ring); document.body.appendChild(dot);
+      let mx = -100, my = -100, rx = -100, ry = -100, seen = false;
+      document.addEventListener("mousemove", e => {
+        mx = e.clientX; my = e.clientY;
+        if (!seen) { seen = true; rx = mx; ry = my; dot.style.opacity = "1"; ring.style.opacity = "1"; }
+        dot.style.transform = "translate(" + mx + "px," + my + "px) translate(-50%,-50%)";
+      });
+      const follow = () => { if (!document.body.contains(ring)) return; rx += (mx - rx) * 0.16; ry += (my - ry) * 0.16; ring.style.transform = "translate(" + rx + "px," + ry + "px) translate(-50%,-50%)"; requestAnimationFrame(follow); };
+      follow();
+      const HOT = "a,button,input,select,textarea,label,.gtile,.gallery-arrow,[data-event-href],[data-faq-btn],[data-billing]";
+      document.addEventListener("mouseover", e => { const on = !!(e.target.closest && e.target.closest(HOT)); dot.classList.toggle("is-hover", on); ring.classList.toggle("is-hover", on); });
+      document.documentElement.addEventListener("mouseleave", () => { dot.style.opacity = "0"; ring.style.opacity = "0"; });
+      document.documentElement.addEventListener("mouseenter", () => { if (seen) { dot.style.opacity = "1"; ring.style.opacity = "1"; } });
+    }
   }
 
   initGallery() {
