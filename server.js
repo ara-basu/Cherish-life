@@ -2,7 +2,7 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
-const PORT = 8000;
+const PORT = process.env.PORT || 8000;
 const MIME_TYPES = {
   '.html': 'text/html; charset=utf-8',
   '.js': 'text/javascript',
@@ -15,10 +15,12 @@ const MIME_TYPES = {
   '.svg': 'image/svg+xml',
   '.webp': 'image/webp',
   '.avif': 'image/avif',
+  '.mp4': 'video/mp4',
 };
 
 const server = http.createServer((req, res) => {
-  let filePath = path.join(__dirname, req.url === '/' ? 'Cherish Life.dc.html' : req.url);
+  const urlPath = decodeURIComponent(req.url.split('?')[0]);
+  let filePath = path.join(__dirname, urlPath === '/' ? 'Cherish Life.dc.html' : urlPath);
 
   fs.readFile(filePath, (err, data) => {
     if (err) {
