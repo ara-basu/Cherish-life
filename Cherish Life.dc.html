@@ -693,6 +693,15 @@ class Component extends DCLogic {
     window.closeGalleryModal=()=>{ document.getElementById("galleryModal").classList.add("hidden"); };
     window.nextGalleryImage=()=>{ ci=(ci+1)%COUNT; render(); };
     window.prevGalleryImage=()=>{ ci=(ci-1+COUNT)%COUNT; render(); };
+    // inline onclick attrs are stripped by the runtime — bind modal controls here
+    const modal=document.getElementById("galleryModal");
+    if(modal&&!modal.dataset.bound){
+      modal.dataset.bound="1";
+      modal.addEventListener("click",e=>{ if(e.target===modal) window.closeGalleryModal(); });
+      const cb=modal.querySelector(".gallery-modal__close"); if(cb)cb.addEventListener("click",()=>window.closeGalleryModal());
+      const pb=modal.querySelector(".gallery-modal__prev"); if(pb)pb.addEventListener("click",()=>window.prevGalleryImage());
+      const nb=modal.querySelector(".gallery-modal__next"); if(nb)nb.addEventListener("click",()=>window.nextGalleryImage());
+    }
     this._galKey=(e)=>{ const m=document.getElementById("galleryModal"); if(!m||m.classList.contains("hidden"))return; if(e.key==="ArrowRight")window.nextGalleryImage(); if(e.key==="ArrowLeft")window.prevGalleryImage(); if(e.key==="Escape")window.closeGalleryModal(); };
     document.addEventListener("keydown",this._galKey);
   }
