@@ -73,11 +73,7 @@
   <!-- NAV -->
   <nav id="cl-nav" style="position:sticky;top:0;z-index:60;display:flex;align-items:center;justify-content:space-between;padding:18px clamp(20px,5vw,64px);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:background .4s ease,box-shadow .4s ease;">
     <a href="#top" style="text-decoration:none;display:flex;align-items:center;gap:11px;">
-      <span style="display:flex;flex-direction:column;gap:3px;">
-        <span style="width:22px;height:5px;border-radius:2px;background:#6B5A1B;"></span>
-        <span style="width:15px;height:5px;border-radius:2px;background:#CE8946;margin-left:5px;"></span>
-        <span style="width:19px;height:5px;border-radius:2px;background:#D4AF37;"></span>
-      </span>
+      <img src="Images/web/Cherish Life Logo.png" alt="Cherish Life logo" style="width:52px;height:52px;border-radius:50%;object-fit:cover;display:block;">
       <span style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:#6B5A1B;letter-spacing:.01em;">Cherish Life</span>
     </a>
     <div style="display:none;gap:32px;align-items:center;" data-nav-links>
@@ -109,8 +105,8 @@
   <!-- MARQUEE -->
   <div style="background:#6B5A1B;overflow:hidden;padding:18px 0;white-space:nowrap;">
     <div style="display:inline-block;white-space:nowrap;will-change:transform;animation:clMarquee 34s linear infinite;">
-      <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(22px,3vw,34px);color:#FDFBD4;padding-right:34px;">Birthdays&nbsp;&nbsp;✦&nbsp;&nbsp;Housewarming&nbsp;&nbsp;✦&nbsp;&nbsp;Mehendi&nbsp;&nbsp;✦&nbsp;&nbsp;Engagement&nbsp;&nbsp;✦&nbsp;&nbsp;Haldi&nbsp;&nbsp;✦&nbsp;&nbsp;Baby Shower&nbsp;&nbsp;✦&nbsp;&nbsp;Balloon Decor&nbsp;&nbsp;✦&nbsp;&nbsp;Stage Decor&nbsp;&nbsp;✦&nbsp;&nbsp;Corporate&nbsp;&nbsp;✦&nbsp;&nbsp;Celebrity Night&nbsp;&nbsp;✦&nbsp;&nbsp;</span>
-      <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(22px,3vw,34px);color:#FDFBD4;padding-right:34px;">Birthdays&nbsp;&nbsp;✦&nbsp;&nbsp;Housewarming&nbsp;&nbsp;✦&nbsp;&nbsp;Mehendi&nbsp;&nbsp;✦&nbsp;&nbsp;Engagement&nbsp;&nbsp;✦&nbsp;&nbsp;Haldi&nbsp;&nbsp;✦&nbsp;&nbsp;Baby Shower&nbsp;&nbsp;✦&nbsp;&nbsp;Balloon Decor&nbsp;&nbsp;✦&nbsp;&nbsp;Stage Decor&nbsp;&nbsp;✦&nbsp;&nbsp;Corporate&nbsp;&nbsp;✦&nbsp;&nbsp;Celebrity Night&nbsp;&nbsp;✦&nbsp;&nbsp;</span>
+      <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(22px,3vw,34px);color:#FDFBD4;padding-right:34px;">Birthdays&nbsp;&nbsp;✦&nbsp;&nbsp;Housewarming&nbsp;&nbsp;✦&nbsp;&nbsp;Mehendi&nbsp;&nbsp;✦&nbsp;&nbsp;Engagement&nbsp;&nbsp;✦&nbsp;&nbsp;Haldi&nbsp;&nbsp;✦&nbsp;&nbsp;Baby Shower&nbsp;&nbsp;✦&nbsp;&nbsp;Custom Hampers&nbsp;&nbsp;✦&nbsp;&nbsp;Balloon Decor&nbsp;&nbsp;✦&nbsp;&nbsp;Stage Decor&nbsp;&nbsp;✦&nbsp;&nbsp;Corporate&nbsp;&nbsp;✦&nbsp;&nbsp;Celebrity Night&nbsp;&nbsp;✦&nbsp;&nbsp;</span>
+      <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(22px,3vw,34px);color:#FDFBD4;padding-right:34px;">Birthdays&nbsp;&nbsp;✦&nbsp;&nbsp;Housewarming&nbsp;&nbsp;✦&nbsp;&nbsp;Mehendi&nbsp;&nbsp;✦&nbsp;&nbsp;Engagement&nbsp;&nbsp;✦&nbsp;&nbsp;Haldi&nbsp;&nbsp;✦&nbsp;&nbsp;Baby Shower&nbsp;&nbsp;✦&nbsp;&nbsp;Custom Hampers&nbsp;&nbsp;✦&nbsp;&nbsp;Balloon Decor&nbsp;&nbsp;✦&nbsp;&nbsp;Stage Decor&nbsp;&nbsp;✦&nbsp;&nbsp;Corporate&nbsp;&nbsp;✦&nbsp;&nbsp;Celebrity Night&nbsp;&nbsp;✦&nbsp;&nbsp;</span>
     </div>
   </div>
 
@@ -152,7 +148,7 @@
       <div style="display:flex;flex-direction:column;gap:20px;">
         <sc-for list="{{ services }}" as="s" hint-placeholder-count="3">
           <div data-reveal style="opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.75,.2,1),transform .8s cubic-bezier(.2,.75,.2,1);transition-delay:calc({{ $index }} * 90ms);display:grid;grid-template-columns:1fr;gap:0;border-radius:24px;overflow:hidden;background:#F3ECC0;box-shadow:0 12px 26px rgba(107,90,27,.06);" data-service-row>
-            <div style="aspect-ratio:16/7;overflow:hidden;"><img src="{{ s.img }}" alt="{{ s.title }}" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="aspect-ratio:{{ s.ratio }};overflow:hidden;"><img src="{{ s.img }}" alt="{{ s.title }}" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:{{ s.pos }};display:block;"></div>
             <div style="padding:30px 34px;display:flex;flex-direction:column;justify-content:center;">
               <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;color:#6B5A1B;font-size:clamp(24px,2.4vw,30px);margin:0;">{{ s.title }}</h3>
               <p style="font-size:15px;line-height:1.6;color:#6E5F2A;margin:12px 0 0;max-width:440px;">{{ s.desc }}</p>
@@ -241,7 +237,7 @@
       <h2 style="font-family:'Cormorant Garamond',serif;font-weight:600;color:#6B5A1B;font-size:clamp(34px,5vw,58px);line-height:1;margin:14px 0 0;">Delivering exceptional experiences</h2>
     </div>
     <div data-impact-row style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;max-width:900px;margin:0 auto;">
-      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.75,.2,1),transform .8s cubic-bezier(.2,.75,.2,1);flex:1 1 240px;background:#F3ECC0;border-radius:24px;padding:40px 30px;box-shadow:0 14px 30px rgba(107,90,27,.07);"><div style="font-family:'Cormorant Garamond',serif;font-size:clamp(48px,6vw,72px);font-weight:600;color:#6B5A1B;line-height:1;" data-count="800" data-suffix="+">800+</div><div style="font-size:14px;color:#97854A;margin-top:10px;letter-spacing:.02em;">Successful events delivered</div></div>
+      <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.75,.2,1),transform .8s cubic-bezier(.2,.75,.2,1);flex:1 1 240px;background:#F3ECC0;border-radius:24px;padding:40px 30px;box-shadow:0 14px 30px rgba(107,90,27,.07);"><div style="font-family:'Cormorant Garamond',serif;font-size:clamp(48px,6vw,72px);font-weight:600;color:#6B5A1B;line-height:1;" data-count="20" data-suffix="+">20+</div><div style="font-size:14px;color:#97854A;margin-top:10px;letter-spacing:.02em;">Successful events delivered</div></div>
       <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.75,.2,1) .1s,transform .8s cubic-bezier(.2,.75,.2,1) .1s;flex:1 1 240px;background:#6B5A1B;border-radius:24px;padding:40px 30px;box-shadow:0 14px 30px rgba(107,90,27,.15);"><div style="font-family:'Cormorant Garamond',serif;font-size:clamp(48px,6vw,72px);font-weight:600;color:#D4AF37;line-height:1;" data-count="100" data-suffix="%">100%</div><div style="font-size:14px;color:rgba(244,239,226,.8);margin-top:10px;letter-spacing:.02em;">Client satisfaction rating</div></div>
       <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.75,.2,1) .2s,transform .8s cubic-bezier(.2,.75,.2,1) .2s;flex:1 1 240px;background:#F3ECC0;border-radius:24px;padding:40px 30px;box-shadow:0 14px 30px rgba(107,90,27,.07);"><div style="font-family:'Cormorant Garamond',serif;font-size:clamp(48px,6vw,72px);font-weight:600;color:#6B5A1B;line-height:1;" data-count="40" data-suffix="+">40+</div><div style="font-size:14px;color:#97854A;margin-top:10px;letter-spacing:.02em;">Types of events we craft</div></div>
     </div>
@@ -257,8 +253,8 @@
       <div data-founders-grid style="display:grid;grid-template-columns:1fr;gap:24px;">
         <sc-for list="{{ founders }}" as="f" hint-placeholder-count="2">
           <div data-reveal style="opacity:0;transform:translateY(32px);transition:opacity .85s cubic-bezier(.2,.75,.2,1),transform .85s cubic-bezier(.2,.75,.2,1);transition-delay:calc({{ $index }} * 120ms);display:flex;gap:22px;align-items:center;background:#FDFBD4;border-radius:24px;padding:26px;box-shadow:0 14px 30px rgba(107,90,27,.07);">
-            <div style="flex:none;width:clamp(92px,12vw,124px);height:clamp(92px,12vw,124px);border-radius:50%;overflow:hidden;background-color:#E7DDA0;background-image:repeating-linear-gradient(45deg,rgba(107,90,27,.08) 0 10px,transparent 10px 20px);border:4px solid #D4AF37;display:flex;align-items:center;justify-content:center;">
-              <span style="font-family:'Cormorant Garamond',serif;font-size:34px;color:rgba(107,90,27,.5);">{{ f.initial }}</span>
+            <div style="flex:none;width:clamp(92px,12vw,124px);height:clamp(92px,12vw,124px);border-radius:50%;overflow:hidden;background-color:#E7DDA0;border:4px solid #D4AF37;">
+              <img src="{{ f.img }}" alt="{{ f.name }}" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center 25%;display:block;">
             </div>
             <div>
               <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;color:#6B5A1B;font-size:clamp(26px,2.6vw,32px);margin:0;line-height:1;">{{ f.name }}</h3>
@@ -308,54 +304,6 @@
     </div>
   </div></section>
 
-  <!-- PRICING -->
-  <section id="pricing" style="position:relative;padding:clamp(60px,10vh,110px) clamp(20px,5vw,64px);text-align:center;"><div data-parallax="0.05" data-rot="180" style="position:absolute;top:-10px;right:-30px;width:330px;height:177px;background:#8f8a3f;opacity:0.16;-webkit-mask:url('assets/fw-4.png') center/contain no-repeat;mask:url('assets/fw-4.png') center/contain no-repeat;z-index:0;pointer-events:none;transform:rotate(180deg);"></div><div data-parallax="0.05" data-rot="0" style="position:absolute;bottom:0;left:1%;width:260px;height:174px;background:#CE8946;opacity:0.2;-webkit-mask:url('assets/fw-10.png') center/contain no-repeat;mask:url('assets/fw-10.png') center/contain no-repeat;z-index:0;pointer-events:none;transform:rotate(0deg);"></div><div data-parallax="0.05" data-rot="0" style="position:absolute;top:15%;left:3%;width:200px;height:104px;background:#C79A2E;opacity:0.2;-webkit-mask:url('assets/fw-2.png') center/contain no-repeat;mask:url('assets/fw-2.png') center/contain no-repeat;z-index:0;pointer-events:none;transform:rotate(0deg);"></div><div style="position:relative;z-index:1;">
-    <div data-reveal style="opacity:0;transform:translateY(30px);transition:opacity .9s cubic-bezier(.2,.75,.2,1),transform .9s cubic-bezier(.2,.75,.2,1);">
-      <span style="font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:#CE8946;">Packages</span>
-      <h2 style="font-family:'Cormorant Garamond',serif;font-weight:600;color:#6B5A1B;font-size:clamp(34px,5vw,58px);line-height:1;margin:14px 0 0;">Flexible planning packages</h2>
-      <p style="font-size:15px;color:#97854A;margin:12px 0 0;">Thoughtful options for every budget</p>
-    </div>
-    <div style="display:inline-flex;gap:4px;background:#F3ECC0;border:1px solid rgba(107,90,27,.12);border-radius:999px;padding:5px;margin:30px 0 44px;">
-      <button type="button" data-billing="event" style="border:none;cursor:pointer;font-family:'Jost';font-size:13px;letter-spacing:.02em;padding:10px 20px;border-radius:999px;background:#6B5A1B;color:#FDFBD4;transition:all .3s ease;">Per event</button>
-      <button type="button" data-billing="package" style="border:none;cursor:pointer;font-family:'Jost';font-size:13px;letter-spacing:.02em;padding:10px 20px;border-radius:999px;background:transparent;color:#6B5A1B;transition:all .3s ease;">Season package (save 20%)</button>
-    </div>
-    <div data-pricing-row style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;max-width:1080px;margin:0 auto;">
-      <div data-reveal style="opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.75,.2,1),transform .8s cubic-bezier(.2,.75,.2,1);flex:1 1 300px;background:#F3ECC0;border-radius:26px;padding:34px;text-align:left;box-shadow:0 12px 26px rgba(107,90,27,.06);">
-        <div style="font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#97854A;">Essentials</div>
-        <div style="font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:600;color:#6B5A1B;margin:10px 0 4px;"><span data-price data-event="₹25,000" data-package="₹20,000">₹25,000</span></div>
-        <a href="#contact" style="display:block;text-align:center;text-decoration:none;margin:20px 0 24px;border:1px solid rgba(107,90,27,.3);color:#6B5A1B;font-size:14px;padding:13px;border-radius:999px;transition:background .3s ease,color .3s ease;" style-hover="background:#6B5A1B;color:#FDFBD4">Get started</a>
-        <div style="display:flex;flex-direction:column;gap:12px;font-size:14px;color:#6E5F2A;">
-          <span style="display:flex;gap:10px;"><span style="color:#CE8946;">✓</span>Standard decorations</span>
-          <span style="display:flex;gap:10px;"><span style="color:#CE8946;">✓</span>Basic planning assistance</span>
-          <span style="display:flex;gap:10px;"><span style="color:#CE8946;">✓</span>On-day setup</span>
-        </div>
-      </div>
-      <div data-reveal style="opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.75,.2,1) .1s,transform .8s cubic-bezier(.2,.75,.2,1) .1s;flex:1 1 300px;background:#6B5A1B;border-radius:26px;padding:34px;text-align:left;box-shadow:0 22px 46px rgba(107,90,27,.24);position:relative;">
-        <span style="position:absolute;top:20px;right:20px;background:#D4AF37;color:#6B5A1B;font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:6px 12px;border-radius:999px;">Popular</span>
-        <div style="font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#D4AF37;">Signature</div>
-        <div style="font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:600;color:#FDFBD4;margin:10px 0 4px;"><span data-price data-event="₹75,000" data-package="₹60,000">₹75,000</span></div>
-        <a href="#contact" style="display:block;text-align:center;text-decoration:none;margin:20px 0 24px;background:#D4AF37;color:#6B5A1B;font-size:14px;padding:13px;border-radius:999px;transition:transform .3s ease;" style-hover="transform:translateY(-2px)">Get started</a>
-        <div style="display:flex;flex-direction:column;gap:12px;font-size:14px;color:rgba(244,239,226,.85);">
-          <span style="display:flex;gap:10px;"><span style="color:#D4AF37;">✓</span>Fully customised decorations</span>
-          <span style="display:flex;gap:10px;"><span style="color:#D4AF37;">✓</span>End-to-end planning service</span>
-          <span style="display:flex;gap:10px;"><span style="color:#D4AF37;">✓</span>On-site event management</span>
-          <span style="display:flex;gap:10px;"><span style="color:#D4AF37;">✓</span>Vendor coordination</span>
-        </div>
-      </div>
-      <div data-reveal style="opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.75,.2,1) .2s,transform .8s cubic-bezier(.2,.75,.2,1) .2s;flex:1 1 300px;background:#F3ECC0;border-radius:26px;padding:34px;text-align:left;box-shadow:0 12px 26px rgba(107,90,27,.06);">
-        <div style="font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#97854A;">Bespoke</div>
-        <div style="font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:600;color:#6B5A1B;margin:10px 0 4px;">Let's talk</div>
-        <a href="#contact" style="display:block;text-align:center;text-decoration:none;margin:20px 0 24px;border:1px solid rgba(107,90,27,.3);color:#6B5A1B;font-size:14px;padding:13px;border-radius:999px;transition:background .3s ease,color .3s ease;" style-hover="background:#6B5A1B;color:#FDFBD4">Contact us</a>
-        <div style="display:flex;flex-direction:column;gap:12px;font-size:14px;color:#6E5F2A;">
-          <span style="display:flex;gap:10px;"><span style="color:#CE8946;">✓</span>Multi-day &amp; large events</span>
-          <span style="display:flex;gap:10px;"><span style="color:#CE8946;">✓</span>Full production &amp; styling</span>
-          <span style="display:flex;gap:10px;"><span style="color:#CE8946;">✓</span>Dedicated event director</span>
-          <span style="display:flex;gap:10px;"><span style="color:#CE8946;">✓</span>Unlimited revisions</span>
-        </div>
-      </div>
-    </div>
-  </div></section>
-
   <!-- FAQ -->
   <section style="position:relative;padding:clamp(50px,9vh,100px) clamp(20px,5vw,64px);"><div data-parallax="0.03" data-rot="0" style="position:absolute;top:6%;left:-40px;width:420px;height:184px;background:#8f8a3f;opacity:0.15;-webkit-mask:url('assets/fw-8.png') center/contain no-repeat;mask:url('assets/fw-8.png') center/contain no-repeat;z-index:0;pointer-events:none;transform:rotate(0deg);"></div><div data-parallax="0.05" data-rot="180" style="position:absolute;bottom:4%;right:2%;width:220px;height:141px;background:#CE8946;opacity:0.2;-webkit-mask:url('assets/fw-1.png') center/contain no-repeat;mask:url('assets/fw-1.png') center/contain no-repeat;z-index:0;pointer-events:none;transform:rotate(180deg);"></div><div data-parallax="0.05" data-rot="0" style="position:absolute;top:8%;right:4%;width:190px;height:107px;background:#C79A2E;opacity:0.2;-webkit-mask:url('assets/fw-11.png') center/contain no-repeat;mask:url('assets/fw-11.png') center/contain no-repeat;z-index:0;pointer-events:none;transform:rotate(0deg);"></div><div style="position:relative;z-index:1;">
     <div style="max-width:820px;margin:0 auto;">
@@ -391,9 +339,10 @@
         <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;color:#FDFBD4;font-size:clamp(28px,3.4vw,40px);line-height:1.08;margin:14px 0 18px;">Let's plan something beautiful</h3>
         <p style="font-size:15px;line-height:1.65;color:rgba(253,251,212,.82);margin:0 0 32px;max-width:340px;">Tell us about your occasion and we'll craft a celebration you'll never forget. We usually reply within a day.</p>
         <div style="display:flex;flex-direction:column;gap:16px;">
-          <a href="tel:+919876543210" style="text-decoration:none;display:flex;align-items:center;gap:14px;color:#FDFBD4;transition:color .3s ease;" style-hover="color:#D4AF37"><span style="width:40px;height:40px;flex:none;border-radius:50%;border:1px solid rgba(253,251,212,.35);display:flex;align-items:center;justify-content:center;font-size:15px;">✆</span><span style="font-size:15px;">+91 98765 43210</span></a>
-          <a href="mailto:hello@cherishlife.in" style="text-decoration:none;display:flex;align-items:center;gap:14px;color:#FDFBD4;transition:color .3s ease;" style-hover="color:#D4AF37"><span style="width:40px;height:40px;flex:none;border-radius:50%;border:1px solid rgba(253,251,212,.35);display:flex;align-items:center;justify-content:center;font-size:14px;">✉</span><span style="font-size:15px;">hello@cherishlife.in</span></a>
-          <a href="#" style="text-decoration:none;display:flex;align-items:center;gap:14px;color:#FDFBD4;transition:color .3s ease;" style-hover="color:#D4AF37"><span style="width:40px;height:40px;flex:none;border-radius:50%;border:1px solid rgba(253,251,212,.35);display:flex;align-items:center;justify-content:center;font-size:12px;">IG</span><span style="font-size:15px;">@cherishlife.events</span></a>
+          <a href="tel:+919177745923" style="text-decoration:none;display:flex;align-items:center;gap:14px;color:#FDFBD4;transition:color .3s ease;" style-hover="color:#D4AF37"><span style="width:40px;height:40px;flex:none;border-radius:50%;border:1px solid rgba(253,251,212,.35);display:flex;align-items:center;justify-content:center;font-size:15px;">✆</span><span style="font-size:15px;">+91 91777 45923</span></a>
+          <a href="tel:+919160562200" style="text-decoration:none;display:flex;align-items:center;gap:14px;color:#FDFBD4;transition:color .3s ease;" style-hover="color:#D4AF37"><span style="width:40px;height:40px;flex:none;border-radius:50%;border:1px solid rgba(253,251,212,.35);display:flex;align-items:center;justify-content:center;font-size:15px;">✆</span><span style="font-size:15px;">+91 91605 62200</span></a>
+          <a href="mailto:Neha.jain09@gmail.com" style="text-decoration:none;display:flex;align-items:center;gap:14px;color:#FDFBD4;transition:color .3s ease;" style-hover="color:#D4AF37"><span style="width:40px;height:40px;flex:none;border-radius:50%;border:1px solid rgba(253,251,212,.35);display:flex;align-items:center;justify-content:center;font-size:14px;">✉</span><span style="font-size:15px;">Neha.jain09@gmail.com</span></a>
+          <a href="https://www.instagram.com/cherishlifeevents" target="_blank" rel="noopener" style="text-decoration:none;display:flex;align-items:center;gap:14px;color:#FDFBD4;transition:color .3s ease;" style-hover="color:#D4AF37"><span style="width:40px;height:40px;flex:none;border-radius:50%;border:1px solid rgba(253,251,212,.35);display:flex;align-items:center;justify-content:center;font-size:12px;">IG</span><span style="font-size:15px;">@cherishlifeevents</span></a>
         </div>
       </div>
       <form id="cl-form" style="padding:clamp(32px,4.5vw,52px);display:flex;flex-direction:column;gap:16px;">
@@ -413,6 +362,7 @@
             <option>Mehendi Ceremony</option>
             <option>Engagement</option>
             <option>Baby Shower</option>
+            <option>Custom Hampers</option>
             <option>Haldi Decoration</option>
             <option>Corporate / Conference</option>
             <option>Other celebration</option>
@@ -445,17 +395,18 @@
         </div>
         <div style="display:flex;flex-direction:column;gap:12px;">
           <span style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#D4AF37;">Services</span>
-          <a href="#specialties" style="text-decoration:none;color:#D6CB94;font-size:14px;">Birthday Parties</a>
-          <a href="#specialties" style="text-decoration:none;color:#D6CB94;font-size:14px;">Engagements</a>
+          <a href="birthday.html" style="text-decoration:none;color:#D6CB94;font-size:14px;">Birthday Parties</a>
+          <a href="engagement.html" style="text-decoration:none;color:#D6CB94;font-size:14px;">Engagements</a>
+          <a href="hampers.html" style="text-decoration:none;color:#D6CB94;font-size:14px;">Custom Hampers</a>
           <a href="#specialties" style="text-decoration:none;color:#D6CB94;font-size:14px;">Mehendi</a>
-          <a href="#specialties" style="text-decoration:none;color:#D6CB94;font-size:14px;">Housewarming</a>
+          <a href="housewarming.html" style="text-decoration:none;color:#D6CB94;font-size:14px;">Housewarming</a>
         </div>
         <div style="display:flex;flex-direction:column;gap:12px;">
           <span style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#D4AF37;">Contact us</span>
-          <a href="mailto:hello@cherishlife.in" style="text-decoration:none;color:#D6CB94;font-size:14px;">Email us</a>
-          <a href="tel:+919876543210" style="text-decoration:none;color:#D6CB94;font-size:14px;">Call us</a>
-          <a href="#" style="text-decoration:none;color:#D6CB94;font-size:14px;">Instagram</a>
-          <a href="#" style="text-decoration:none;color:#D6CB94;font-size:14px;">WhatsApp</a>
+          <a href="mailto:Neha.jain09@gmail.com" style="text-decoration:none;color:#D6CB94;font-size:14px;">Email us</a>
+          <a href="tel:+919177745923" style="text-decoration:none;color:#D6CB94;font-size:14px;">Call us</a>
+          <a href="https://www.instagram.com/cherishlifeevents" target="_blank" rel="noopener" style="text-decoration:none;color:#D6CB94;font-size:14px;">Instagram</a>
+          <a href="https://wa.me/919160562200" target="_blank" rel="noopener" style="text-decoration:none;color:#D6CB94;font-size:14px;">WhatsApp</a>
         </div>
       </div>
     </div>
@@ -470,30 +421,30 @@
 class Component extends DCLogic {
   renderVals() {
     const services = [
-      { title: "Diverse Event Planning", desc: "From birthdays to corporate events, we've got every occasion covered.", img: "Images/web/6.jpeg" },
-      { title: "Personalized Decorations", desc: "Unique themes and stunning designs, customised for your celebration.", img: "Images/web/Bday 1.jpg" },
-      { title: "Professional Management", desc: "Expert coordination from start to finish for a completely stress-free day.", img: "Images/web/House Warming 4.jpg" }
+      { title: "Diverse Event Planning", desc: "From birthdays to corporate events, we've got every occasion covered.", img: "Images/web/6.jpeg", ratio: "16/7", pos: "center" },
+      { title: "Personalized Decorations", desc: "Unique themes and stunning designs, customised for your celebration.", img: "Images/web/First 1.JPG", ratio: "16/7", pos: "center" },
+      { title: "Professional Management", desc: "Expert coordination from start to finish for a completely stress-free day.", img: "Images/web/Founders.jpeg", ratio: "3/2", pos: "center 20%" }
     ];
     const bigTiles = [
       { name: "Birthday Parties", desc: "Make every birthday truly special with personalised themes, balloons and dessert tables.", img: "Images/web/Bday 2.jpg", href: "birthday.html", tag: "View gallery" },
       { name: "Engagement Ceremonies", desc: "Stunning stages and ambient lighting for the moment two families become one.", img: "Images/web/8.jpeg", href: "engagement.html", tag: "View gallery" },
-      { name: "Mehendi Ceremony", desc: "Vibrant marigold mandaps, drapes and cosy seating that get everyone dancing.", img: "Images/web/17.jpeg", href: "", tag: "Photo" },
+      { name: "Custom Hampers", desc: "Thoughtfully curated gift hampers, wrapped with love for every occasion.", img: "Images/web/Hamper 1.jpeg", href: "hampers.html", tag: "View gallery" },
       { name: "House Warmings", desc: "Warm, auspicious decor to welcome prosperity into your new beginnings.", img: "Images/web/House Warming 1.jpg", href: "housewarming.html", tag: "View gallery" }
     ];
     const smallCards = [
       { name: "Baby Showers", desc: "Soft, dreamy setups to celebrate new beginnings." },
-      { name: "Corporate Events", desc: "Impress clients and colleagues with professional planning." },
+      { name: "Mehendi Ceremony", desc: "Vibrant marigold mandaps, drapes and cosy seating that get everyone dancing." },
       { name: "Themed Decorations", desc: "Countless themes to bring your ideas to life." },
       { name: "Stage Design", desc: "Show-stopping stages that leave a lasting impression." }
     ];
     const moreServices = [
-      "Balloon Decoration", "Bride-Groom Entry", "Haldi Decoration", "Varmala Stage",
-      "Theme Birthday Party", "Conference Management", "Mandap Decoration", "Inauguration & Launch",
+      "Custom Hampers", "Balloon Decoration", "Bride-Groom Entry", "Haldi Decoration", "Varmala Stage",
+      "Theme Birthday Party", "Corporate Events", "Conference Management", "Mandap Decoration", "Inauguration & Launch",
       "Government Function", "College Festival", "Annual Function / Mahotsav", "Celebrity Night"
     ];
     const founders = [
-      { name: "Nirja", initial: "N", role: "Co-founder · Creative Director", bio: "The eye behind every palette and prop. Nirja turns a mood into a moment, obsessing over the details most people only feel." },
-      { name: "Neha", initial: "N", role: "Co-founder · Events Director", bio: "The calm at the centre of every celebration. Neha keeps timelines, vendors and dreams perfectly in step on the big day." }
+      { name: "Nirja", initial: "N", img: "Images/web/Nirja.jpeg", role: "Co-founder · Creative Director", bio: "The eye behind every palette and prop. Nirja turns a mood into a moment, obsessing over the details most people only feel." },
+      { name: "Neha", initial: "N", img: "Images/web/Neha.jpeg", role: "Co-founder · Events Director", bio: "The calm at the centre of every celebration. Neha keeps timelines, vendors and dreams perfectly in step on the big day." }
     ];
     const rawReviews = [
       { name: "Anjali Gupta", event: "Mehendi Ceremony", rating: 5, text: "Cherish Life turned my sister's mehendi into a fairy tale! The decorations were absolutely stunning." },
@@ -548,9 +499,6 @@ class Component extends DCLogic {
     };
     applyCols();
     w0.addEventListener("resize", applyCols);
-
-    // ---- optional prop: hide pricing ----
-    if (this.props.showPricing === false) { const p = document.getElementById("pricing"); if (p) p.style.display = "none"; }
 
     // ---- directional variety for reveals ----
     document.querySelectorAll("[data-service-row]").forEach((el, i) => { el.dataset.anim = i % 2 ? "right" : "left"; });
@@ -633,21 +581,23 @@ class Component extends DCLogic {
       });
     });
 
-    // ---- pricing billing toggle ----
-    const billBtns = document.querySelectorAll("[data-billing]");
-    const setBilling = (mode) => {
-      billBtns.forEach(b => { const on = b.dataset.billing === mode; b.style.background = on ? "#6B5A1B" : "transparent"; b.style.color = on ? "#FDFBD4" : "#6B5A1B"; });
-      document.querySelectorAll("[data-price]").forEach(p => { const v = p.dataset[mode]; if (v) p.textContent = v; });
-    };
-    billBtns.forEach(b => b.addEventListener("click", () => setBilling(b.dataset.billing)));
-    setBilling("event");
-
     // ---- gallery ----
     this.initGallery();
 
-    // ---- contact form ----
+    // ---- contact form → WhatsApp enquiry ----
     const form = document.getElementById("cl-form");
-    if (form) form.addEventListener("submit", (e) => { e.preventDefault(); const n = document.getElementById("cl-form-note"); if (n) n.style.display = "block"; form.reset(); });
+    if (form) form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const name = form.querySelector('input[type="text"]').value.trim();
+      const phone = form.querySelector('input[type="tel"]').value.trim();
+      const type = form.querySelector("select").value;
+      const details = form.querySelector("textarea").value.trim();
+      const msg = "Hi Cherish Life! I'd like to plan an event.\n\nName: " + name + "\nPhone: " + phone + "\nType of event: " + type + (details ? "\nDetails: " + details : "");
+      window.open("https://wa.me/919160562200?text=" + encodeURIComponent(msg), "_blank");
+      const n = document.getElementById("cl-form-note");
+      if (n) { n.textContent = "Opening WhatsApp with your enquiry — just hit send!"; n.style.display = "block"; }
+      form.reset();
+    });
 
     // ---- custom cursor ----
     if (window.matchMedia("(hover:hover) and (pointer:fine)").matches && !document.getElementById("cl-cursor-dot")) {
